@@ -1,5 +1,8 @@
 # FCM-API
-Build an API from Node.js for pushing notifications via Firebase Cloud Messaging (FCM) to the mobile application (Send to specific Device through token), testing on Postman
+Build an API from Node.js for pushing notifications via Firebase Cloud Messaging (FCM) to the mobile application (Send to specific Device through token), testing on Postman.
+
+https://user-images.githubusercontent.com/70565731/157610659-a11e527e-4e0e-4b3e-bc2f-e98ac868baeb.mp4
+
 # **Check it out! 👇**
 ## Main topic 📓
 ### *Created your own nodeJS server, received the registration token from the mobile application making the API call and sent a custom message using firebase cloud messaging.*
@@ -28,10 +31,12 @@ Build an API from Node.js for pushing notifications via Firebase Cloud Messaging
 ### Create a new collection and paste the url: ```localhost:3000/firebase/notification```, choose the method POST and choose the raw JSON type with the following structure:
 ```
 {
-  "registrationToken: "your registration Token here (find on the mobile application)",
+  "registrationToken": "your registration Token here (find on the mobile application)",
     "title": "title of notification",
     "body": "body of notification"
 }
 ```
+
+![image](https://user-images.githubusercontent.com/70565731/157611080-d6721d6c-8ff1-42c8-af61-afe823c86745.png)
 
 ### Then click Send and enjoy.
