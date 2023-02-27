@@ -25,21 +25,27 @@ app.post("/firebase/notification", (req, res) => {
     notification: {
       title: req.body.title,
       body: req.body.body,
-    },
+      image: req.body.imageUrl,
+    }
   };
 
-  console.log(message);
-  
   const options = notification_options;
 
   admin
     .messaging()
     .sendToDevice(registrationToken, message, options)
     .then((response) => {
-      res.status(200).send("Notification sent successfully");
+      if (response.results[0].messageId == null) {
+        console.log(response.results[0].error);
+        res.status(400).send(response.results[0].error);
+      } else {
+        console.log(message);
+        res.status(200).send('Notification sent successfully with messageId: ' + response.results[0].messageId);
+      }
     })
     .catch((error) => {
       console.log(error);
+      res.status(400).send(error);
     });
 });
 
